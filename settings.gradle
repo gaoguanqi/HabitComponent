@@ -1,0 +1,2 @@
+include ':app', ':baselibrary', ':reslibrary', ':module-account', ':module-main'
+rootProject.name='HabitComponent'
