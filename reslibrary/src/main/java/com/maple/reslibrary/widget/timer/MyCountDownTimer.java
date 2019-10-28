@@ -12,6 +12,7 @@ public class MyCountDownTimer extends CountDownTimer {
         this.mMillisInFuture = millisInFuture;
         this.mCountDownInterval = countDownInterval;
         this.mListener = listener;
+        this.start();
         mListener.onStart();
     }
 

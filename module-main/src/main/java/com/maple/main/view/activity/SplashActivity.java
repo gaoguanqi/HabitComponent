@@ -2,6 +2,8 @@ package com.maple.main.view.activity;
 
 import android.os.Bundle;
 
+import androidx.lifecycle.ViewModelProviders;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.maple.baselibrary.router.RouterActivityPath;
@@ -28,9 +30,8 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
     }
 
     @Override
-    public void initViewObservable() {
-        super.initViewObservable();
-        binding.setViewModel(viewModel);
+    public void initData() {
+        super.initData();
         viewModel.timerTask();
     }
 }

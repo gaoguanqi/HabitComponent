@@ -24,6 +24,6 @@ public class RouterActivityPath {
     public static class Account {
         private static final String ACCOUNT = "/account";
         /*用户登陆*/
-        public static final String PAGER_Login = ACCOUNT + "/Login";
+        public static final String PAGER_LOGIN = ACCOUNT + "/Login";
     }
 }

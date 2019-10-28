@@ -26,28 +26,28 @@ public class SplashViewModel extends BaseViewModel {
 
 
     public void timerTask() {
-         timer = new MyCountDownTimer(60000, 1000, new MyCountDownTimer.MyCountDownTimerListener() {
-            @Override
-            public void onStart() {
-                timeText.set("0");
-            }
+            timer = new MyCountDownTimer(3000, 1000, new MyCountDownTimer.MyCountDownTimerListener() {
+                @Override
+                public void onStart() {
+                    timeText.set("3");
+                }
 
-            @Override
-            public void onTick(long millisUntilFinished) {
-                timeText.set(String.valueOf(millisUntilFinished / 1000));
-            }
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    timeText.set(String.valueOf(millisUntilFinished / 1000));
+                }
 
-            @Override
-            public void onFinish() {
-                launchTarget();
-            }
-        });
+                @Override
+                public void onFinish() {
+                    launchTarget();
+                }
+            });
     }
 
 
     private void launchTarget() {
         LogUtils.logGGQ("launchTarget");
-        ARouter.getInstance().build(RouterActivityPath.Account.PAGER_Login).navigation();
+        ARouter.getInstance().build(RouterActivityPath.Account.PAGER_LOGIN).navigation();
         this.finish();
     }
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--&lt;!&ndash;启动页主题&ndash;&gt;-->
+    <!--<style name="AppTheme.NoTitleBar.Splash" >-->
+        <!--<item name="android:windowBackground">@drawable/ic_launcher_background</item>-->
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+    <!--</style>-->
+
+
+    <style name="SplashTheme" parent="NoTitleBarTheme">
+        <item name="android:windowBackground">@drawable/layer_splash_bg</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

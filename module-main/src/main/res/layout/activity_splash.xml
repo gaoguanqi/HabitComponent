@@ -17,6 +17,6 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@{viewModel.timeText}" />
+            android:text="@{viewModel.timeText,default = 3}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
