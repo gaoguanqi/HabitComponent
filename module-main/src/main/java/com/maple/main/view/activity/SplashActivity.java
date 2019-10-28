@@ -1,13 +1,16 @@
 package com.maple.main.view.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.maple.main.R;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.maple.baselibrary.router.RouterActivityPath;
+import com.maple.baselibrary.utils.LogUtils;
+
+@Route(path = RouterActivityPath.Main.PAGER_SPLASH)
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -24,6 +27,8 @@ public class SplashActivity extends AppCompatActivity {
 
     private void launchTarget() {
 
-
+        LogUtils.logGGQ("launchTarget");
+        ARouter.getInstance().build(RouterActivityPath.Account.PAGER_Login).navigation();
+        this.finish();
     }
 }
