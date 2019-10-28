@@ -1,34 +1,36 @@
 package com.maple.main.view.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.maple.baselibrary.router.RouterActivityPath;
 import com.maple.baselibrary.utils.LogUtils;
+import com.maple.main.BR;
+import com.maple.main.R;
+import com.maple.main.databinding.ActivitySplashBinding;
+import com.maple.main.viewmodel.SplashViewModel;
+
+import me.goldze.mvvmhabit.base.BaseActivity;
 
 @Route(path = RouterActivityPath.Main.PAGER_SPLASH)
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashViewModel> {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                launchTarget();
-            }
-        }, 3 * 1000);
+    public int initContentView(Bundle savedInstanceState) {
+        return R.layout.activity_splash;
     }
 
+    @Override
+    public int initVariableId() {
+        return BR.viewModel;
+    }
 
-    private void launchTarget() {
-
-        LogUtils.logGGQ("launchTarget");
-        ARouter.getInstance().build(RouterActivityPath.Account.PAGER_Login).navigation();
-        this.finish();
+    @Override
+    public void initViewObservable() {
+        super.initViewObservable();
+        binding.setViewModel(viewModel);
+        viewModel.timerTask();
     }
 }
