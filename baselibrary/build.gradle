@@ -45,4 +45,9 @@ dependencies {
     api rootProject.ext.dependencies.MVVMHabit
     //阿里路由框架
     api rootProject.ext.dependencies["arouter-api"]
+    // 基础依赖包，必须要依赖
+    api rootProject.ext.dependencies["immersionbar"]
+//    api rootProject.ext.dependencies["immersionbar-components"]
+
+
 }

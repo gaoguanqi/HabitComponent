@@ -8,9 +8,9 @@ import com.maple.account.R;
 import com.maple.account.BR;
 import com.maple.account.databinding.ActivityLoginBinding;
 import com.maple.account.viewmodel.LoginViewModel;
+import com.maple.baselibrary.base.BaseActivity;
 import com.maple.baselibrary.router.RouterActivityPath;
 
-import me.goldze.mvvmhabit.base.BaseActivity;
 
 @Route(path = RouterActivityPath.Account.PAGER_LOGIN)
 public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewModel> {
