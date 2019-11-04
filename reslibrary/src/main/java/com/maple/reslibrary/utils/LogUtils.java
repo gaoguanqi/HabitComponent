@@ -1,9 +1,10 @@
-package com.maple.baselibrary.utils;
+package com.maple.reslibrary.utils;
 
 
 import android.util.Log;
 
-import com.maple.baselibrary.BuildConfig;
+import com.maple.reslibrary.BuildConfig;
+
 
 public final class LogUtils {
 

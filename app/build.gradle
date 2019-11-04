@@ -34,6 +34,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //内存泄漏测试
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-beta-3'
 
     //宿主项目中判断组件是否需要独立运行
     if (isBuildModule.toBoolean()) {

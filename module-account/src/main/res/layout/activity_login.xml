@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -12,6 +13,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#aabbcc"
+        android:fillViewport="true"
         tools:context=".view.LoginActivity">
 
 
@@ -23,20 +26,118 @@
             <ImageView
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:background="@mipmap/ic_launcher"
                 android:layout_gravity="center"
-                android:layout_margin="30dp" />
+                android:layout_margin="30dp"
+                android:background="@mipmap/ic_launcher" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
+                android:gravity="center_vertical"
                 android:orientation="vertical">
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/shape_account_input"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:src="@android:drawable/ic_menu_add" />
+
+                    <EditText
+                        android:id="@+id/et_account"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入用户名"
+                        android:text="@={viewModel.userName}"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textColorHint"
+                        android:textSize="14sp"
+                        binding:onFocusChangeCommand="@{viewModel.onFocusChangeCommand}" />
+
+                    <ImageButton
+                        android:id="@+id/ibtn_account_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:background="@null"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:src="@android:drawable/ic_delete"
+                        android:visibility="@{viewModel.clearBtnVisibility}"
+                        binding:onClickCommand="@{viewModel.clearUserNameOnClickCommand}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/shape_account_input"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:src="@android:drawable/ic_menu_add" />
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入密码"
+                        android:inputType="textPassword"
+                        android:text="@={viewModel.password}"
+                        android:textColor="@color/textColor"
+                        android:textColorHint="@color/textColorHint"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/cb_password_eye"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/selector_cb_eye"
+                        android:button="@null"
+                        android:checked="@{viewModel.uc.pSwitchEvent}"
+                        binding:onClickCommand="@{viewModel.passwordShowSwitchOnClickCommand}" />
+                </LinearLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.maple.reslibrary.widget.view.LoadingButton
+                    android:id="@+id/lbtn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    binding:onClickCommand="@{viewModel.loginOnClickCommand}" />
+            </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>
